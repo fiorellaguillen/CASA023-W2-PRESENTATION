@@ -1,0 +1,107 @@
+---
+title: "Sentinel - 2"
+subtitle: "Assessing one of the main satellites <br/>for Remote sensing"  
+author: 
+  - "Fiorella Guillen <br/> CASA0023" 
+date: '`r Sys.Date()`'
+
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: solarized-dark
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#2569e8",
+  secondary_color = "#FF961C",
+  inverse_header_color = "#FFFFFF",
+  title_slide_text_color = "#FFFFFF",
+  title_slide_background_image = "images/Ecosystem_services_2.jpg",
+  base_font_size = "22px"
+)
+```
+
+```{css, echo=FALSE}
+.left-column {
+  width: 10%;
+  padding-right: 10px;
+}
+
+.right-column {
+  width: 85%;
+}
+```
+
+## Key facts
+
+* This satellite is managed by the **European Space Agency** and it's part of the **Copernicus Program**
+* Launched on 2015, 2017 and 2024
+* It's equiped with a **MultiSpectral Instrument (MSI)** that uses a push-broom **passive sensor** 
+
+.left-column[
+## ** 2**
+
+## ** 5**
+
+## ** 13** 
+]
+
+.right-column[
+####Identical satellites -Sentinel 2A and 2B- flying <br/> the same orbit but phased at 180°####
+
+####Days revisit frequency at the Equator <br/> (**high** revisit frequency)####
+
+####Spectral bands including four bands at 10m, six bands <br/> at 20m and three bands at 60m spatial resolution####
+
+]
+
+---
+
+## Resolutions
+
+####Temporal resolution:####
+Each satellite has a 10 days revisit frequency, but **combined** it has a **5 days revisit frequency**
+
+####Spatial resolution:####
+Depends on the particular spectral band, ranges from **10 to 60 m** spatial resolution
+####Spectral resolution:####
+Includes **13 spectral bands** that range from the Visible and Near Infrared to the Short Wave Infrared
+####Radiometric resolution:####
+The MSI instrument has a **12 bit resolution**, with a rave of 0 to 4095 potential light instensity values
+---
+
+
+---
+class: inverse center middle
+
+# Topic Changing Interstitial
+
+---
+class: center, middle
+
+# Thanks!
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)<br>
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
