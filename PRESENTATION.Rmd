@@ -1,21 +1,24 @@
 ---
 title: "Sentinel - 2"
-subtitle: "Assessing one of the main satellites <br/>for Remote sensing"  
+subtitle: "Overview of one of the main satellites <br/> for Remote sensing"  
 author: 
   - "Fiorella Guillen <br/> CASA0023" 
-date: '`r Sys.Date()`'
+date: '27 - 01 - 2025'
 
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: custom.css
     nature:
       slideNumberFormat: "%current%"
       highlightStyle: solarized-dark
       highlightLines: true
       ratio: 16:9
       countIncrementalSlides: true
----
+      
+bibliography: "bibliography.bib"
+csl: "harvard-cite-them-right.csl"
 
+---
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(
@@ -29,41 +32,18 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-style_duo_accent(
-  primary_color = "#2569e8",
-  secondary_color = "#FF961C",
-  inverse_header_color = "#FFFFFF",
-  title_slide_text_color = "#FFFFFF",
-  title_slide_background_image = "images/Ecosystem_services_2.jpg",
-  base_font_size = "22px"
-)
-```
+## Key facts##
 
-```{css, echo=FALSE}
-.left-column {
-  width: 10%;
-  padding-right: 10px;
-}
-
-.right-column {
-  width: 85%;
-}
-```
-
-## Key facts
-
-* This satellite is managed by the **European Space Agency** and it's part of the **Copernicus Program**
-* Launched on 2015, 2017 and 2024
-* It's equiped with a **MultiSpectral Instrument (MSI)** that uses a push-broom **passive sensor** 
+* This satellite is managed by the **European Space Agency** and it's part of the **Copernicus Program** 
+* It's equipped with a **MultiSpectral Instrument (MSI)** that uses a push-broom **passive sensor** 
+* Main **applications** include  Land Monitoring, Emergency management, Security and Climate change.
 
 .left-column[
-## ** 2**
+## ** 2 **
 
-## ** 5**
+## ** 5 **
 
-## ** 13** 
+## ** 13 ** 
 ]
 
 .right-column[
@@ -76,8 +56,9 @@ style_duo_accent(
 ]
 
 ---
-
+class: line-height-slide
 ## Resolutions
+To better understand the scope of this sensor, we can assess the four types of resolutions seen in the module:
 
 ####Temporal resolution:####
 Each satellite has a 10 days revisit frequency, but **combined** it has a **5 days revisit frequency**
@@ -87,17 +68,92 @@ Depends on the particular spectral band, ranges from **10 to 60 m** spatial reso
 ####Spectral resolution:####
 Includes **13 spectral bands** that range from the Visible and Near Infrared to the Short Wave Infrared
 ####Radiometric resolution:####
-The MSI instrument has a **12 bit resolution**, with a rave of 0 to 4095 potential light instensity values
----
+The MSI instrument has a **12 bit resolution**, with a range of 0 to 4095 potential light instensity values
 
 
 ---
-class: inverse center middle
+## Most common band combinations
+Sentinel-2 has 13 bands that, when combined, can inform of different features of Earth. This are some of the ones I found more useful for analysing cities and environments within the scope of the module:
 
-# Topic Changing Interstitial
+
+**True color (B4,B3,B2)**: Shows the Earth as humans would naturally see it
+
+**False color (B8,B4,B3)**: Mainly used to identify vegetation, includes near infrared light
+
+**Moisture index (B8A-B11)**: Used to determine vegetation water content and monitor droughts
+
+**NDVI (B8-B4)**: Index for measuring green vegetation and the state of vegetation health
+
+**False Color-urban(B12,B11,B4)**: Used to visualize urban areas and it's useful for detecting wildfires
+
+**NDWI (B3-B8)**: This index is appropriate for water body mapping
+
+**NDSI (B3-B11)**: This index is useful to identify snow coverage and differentiate it from clouds
 
 ---
-class: center, middle
+
+class: title-slide, middle
+background-image: url(images/Land_burned_by_Palisades_wildfire.gif)
+background-position: 75% 100%
+background-size: cover
+
+##    Some applications of Sentinel-2 images:##
+
+<div class="footnote">
+  Gif: Mapping of Los Angeles 2025 wildfires using Sentinel-2 <br/>
+  Source: https://www.esa.int/ESA_Multimedia/Images/2025/01/Land_burned_by_Palisades_wildfire
+</div>
+
+---
+## Applications:##
+
+####1. Analysis of Deforestation in Ucayali-Peru Using Satellite Imagery from Sentinel-2####
+This study uses the **Normalized difference vegetation index** (NDVI) obtained from Sentinel-2 satellite images to identify variations in vegetation indices in fixed regions of the Peruvian amazon to analyse **deforestation in Peru**. Values obtained from this analysis were later used in a linear regression model that could segment each frame according to vegetation density. Results showed that deforestation at the studied location raised from 4200 ha to 8200 ha in two years. (Velayarce et al., 2021)
+
+####Main takeaways from this example:####
+It's a useful methodological tool that shows how Earth Observation can be further approached with other tools like linear regression to segment or classify observed data.
+
+Helps understand which band combinations or indexes are more appropriate for certain topics and locations. In this case, NDVI index for deforestation analysis in the Peruvian Amazon
+
+---
+## Applications:##
+
+####2. Changes in turbidity along Ganga River using Sentinel-2 satellite data during lockdown associated with COVID-19####
+This research uses Sentinel-2 images to study the change in water quality of the Ganga River in India during COVID-19 lockdown. The main factor being evaluated was turbidity which was observed through the change in spectral reflectance of water using the red and NIR bands which were found to be more sensitive to estimate turbidity. (Garg, Aggarwal and Chauhan, 2020; Velayarce et al., 2021)
+
+####Main takeaways from this example:####
+This research shows that EO can go further than identifying land cover, but instead it's a powerful tool to evaluate multiple properties of elements, such as water quality.
+
+This research exemplifies which bands (red and NIR) are more appropriate for analysing water turbidity and quality, which can be useful for future research.
+---
+##Reflections##
+This brief overview of Sentinel-2 has shown me the **wide range of possibilities offered by EO**, both in terms of the band combinations, each of which allows the identification of different features, and in terms of the potential applications across various fields. 
+
+The application examples selected were chosen intentionally as they both relate to my background.The first one, located in my country, analyses deforestation, a critical issue in Peru, and the second one relates to rivers, a topic that I have been exploring since my undergraduate thesis and through my professional experience. In general, they helped me **bridge links between my background and opportunities of future research through EO**, which included methodological tools and topics ideas for future research related to my previous experience.
+
+After seeing the possibilities of Sentinel -2, I am interested in **leveraging it to analyse changes in the Amazon river in Peru** (accelerated with global warming), which is leading to relocation of whole communities, as I consider this can be an useful tool to anticipate these changes and inform more accurate relocation policies. 
+
+---
+class: line-height-slide2
+
+##References:##
+Ecosystem, C.D.S. (no date) Sentinel-2 | Copernicus Data Space Ecosystem. Available at: https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-2 (Accessed: 27 January 2025).
+
+Garg, V., Aggarwal, S. and Chauhan, P. (2020) ‘Changes in turbidity along Ganga River using Sentinel-2 satellite data during lockdown associated with COVID-19’, Geomatics, Natural Hazards and Risk, 11, pp. 1175–1195. Available at: https://doi.org/10.1080/19475705.2020.1782482.
+
+Land burned by Palisades wildfire (no date). Available at: https://www.esa.int/ESA_Multimedia/Images/2025/01/Land_burned_by_Palisades_wildfire (Accessed: 27 January 2025).
+
+Sentinel-2 (no date). Available at: https://sentiwiki.copernicus.eu/web/sentinel-2 (Accessed: 27 January 2025).
+
+Velayarce, D. et al. (2021) ‘Analysis of Deforestation in Ucayali-Peru Using Satellite Imagery from Sentinel-2: 6th Brazilian Technology Symposium, BTSym 2020’, Proceedings of the 6th Brazilian Technology Symposium, BTSym 2020 - Emerging Trends and Challenges in Technology. Edited by Y. Iano et al., pp. 308–316. Available at: https://doi.org/10.1007/978-3-030-75680-2_35.
+
+
+---
+class: title-slide, center, middle
+background-image: url(images/Ecosystem_services_2.jpg)
+background-position: 75% 100%
+background-size: cover
+color: white
 
 # Thanks!
 
@@ -105,3 +161,4 @@ Slides created via the R packages:
 
 [**xaringan**](https://github.com/yihui/xaringan)<br>
 [gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
